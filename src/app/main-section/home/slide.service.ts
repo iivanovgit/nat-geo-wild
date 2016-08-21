@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 
+
 export class Slide {
   constructor(
     public title: string,

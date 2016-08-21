@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 import { Slide, SlideService } from './slide.service';
 import { Subscription } from 'rxjs/Subscription';
@@ -15,9 +16,14 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   private sub: Subscription;
 
+  items: FirebaseListObservable<any>;
+
   constructor(
     private service: SlideService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    af: AngularFire) {
+    this.items = af.database.list('/home/slides');
+  }
 
   ngOnInit() {
     this.sub = this.route
