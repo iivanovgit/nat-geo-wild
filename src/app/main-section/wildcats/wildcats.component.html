@@ -1,0 +1,13 @@
+<div class="page">
+  <div class="page-title type-1">
+    <div class="page-title-inner">
+      <h1 class="text-right">Wild Cats</h1>
+    </div>
+  </div>
+  <div class="page-inner-full">
+    <h2>Wild cats</h2>
+    <ul class="wildcats-menu">
+      <li *ngFor="let wildcat of wildcats" (click)="onSelect(wildcat)"><i class="fa fa-chevron-right"></i> {{wildcat.name}}</li>
+    </ul>
+  </div>
+</div>

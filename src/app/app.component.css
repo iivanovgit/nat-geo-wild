@@ -1,0 +1,39 @@
+*{
+  margin: 0px;
+}
+body {
+      margin:0px;
+      font-family: 'Open Sans', sans-serif;
+      padding-left: 60px;
+      overflow-x: hidden;
+      color: #000;
+      background: #fff;
+    }
+
+  hr{
+    border: 0;
+    height: 1px;
+    background: #dcdcdc;
+    margin: 20px 0px;
+    /*background-image: linear-gradient(to right, #eee, #bbb, #eee);*/
+  }
+
+  .half-width{
+    width: 50%;
+    margin: 0px auto;
+  }
+
+  .text-center{
+    text-align: center;
+  }
+
+  .content{
+    padding: 20px;
+    margin: 0px;
+    /*text-align: center;*/
+    background: #ffffff;
+  }
+
+  
+
+

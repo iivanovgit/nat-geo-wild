@@ -1,0 +1,205 @@
+.page{
+	width: 100%;
+	position: relative;
+}
+
+.page .page-title{
+	width: 100%;
+	height:300px;
+	display: table;
+}
+
+.page .page-title-inner{
+	display: table-cell;
+	vertical-align: middle;
+	padding: 0px 80px;
+  background:#4b4b4b;
+}
+
+.page .page-title-inner h1{
+	color: #fff;
+	font-size: 72px;
+	line-height: 72px;
+	text-transform: uppercase;
+	word-spacing: 9999999px;
+	font-weight: bold;
+	text-shadow: 0px 0px 25px rgba(0, 0, 0, 0.8);
+}
+
+.page .type-1{
+  height: 70vh;
+}
+
+.page .type-1 .page-title-inner{
+  background: url(../../../assets/images/leopard2.jpg) no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+}
+
+.page .page-inner,
+.page .page-inner-full{
+	margin: -80px 80px 0px 80px;
+	background:#fff;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.page .page-inner-full{
+	padding: 40px 50px 40px 60px;
+}
+
+.page .page-inner .content-left{
+	padding: 40px 50px 40px 60px;
+    width: calc(50% - 110px);
+	/*width:calc(50% - 40px);*/
+}
+
+.page .page-inner .content-left blockquote{
+  margin: 30px 0px;
+  border-color: #f6c717;
+  font-size: 1em;
+}
+
+.page .page-inner .content-left h1{font-size: 36px;}
+.page .page-inner .content-left h2{font-size: 30px;}
+.page .page-inner .content-left h3{font-size: 24px;}
+.page .page-inner .content-left h4{font-size: 18px;}
+.page .page-inner .content-left h5{font-size: 14px;}
+
+.page .page-inner .content-left h1,
+.page .page-inner .content-left h2,
+.page .page-inner .content-left h3,
+.page .page-inner .content-left h4,
+.page .page-inner .content-left h5{
+	margin: 0px 0px 35px 0px;
+	padding: 0px;
+	font-weight: bold;
+  color: #000;
+}
+
+.media-list{
+  color: #999;
+}
+
+
+.circle-red{
+	display: inline-block;
+	margin: 0px auto;
+	width: 35px;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+	font-size: 14px !important;
+	font-weight: bold;
+	color: #fff;
+	text-transform: uppercase;
+	background:#c1272d;
+	border-radius: 25px;
+}
+.page .page-inner .content-right{
+    width: 50%;
+	padding: 0px;
+}
+.page .page-inner .content-right img{
+	margin-bottom: 30px;
+    width: 100%;
+}
+
+.page .page-inner .content-right .btn-group-justified{
+	text-align: center;
+    display: flex;
+    width: 70%;
+    margin: 0px auto 30px auto;
+    justify-content: space-between;
+}
+
+.page .page-inner .content-right .btn-group-justified i{
+	display: block;
+	font-size: 2.2em;
+	margin-bottom: 10px; 
+}
+
+.page .page-inner .content-right .btn-group-justified strong{
+	display: block;
+	text-transform: uppercase;
+	font-size: 11px;
+	margin-bottom: 5px;
+}
+
+.page .page-inner .content-right .btn-group-justified span{
+	display: block;
+	font-size: 11px;
+	margin-bottom: 5px;
+}
+
+
+.page-center h2{
+	margin: 0px 0px 35px 0px;
+	padding: 0px;
+	font-weight: bold;
+}
+
+.page-center{
+	-webkit-filter: grayscale(1);
+  	filter: grayscale(1);
+	background-repeat: no-repeat;
+    width: 100%;
+    border-bottom: solid 120px #4b4b4b;
+}
+.page-center .content{
+   padding: 60px;
+    margin: 0px auto -120px auto;
+    width: calc(50% - 120px);
+    text-align: left;
+}
+
+h2{
+	width: 100%;
+}
+
+.wildcats-menu{
+	width: 100%;
+	padding: 10px 0px;
+	margin: 0px;
+	list-style: none;
+}
+
+.wildcats-menu li{
+	cursor: pointer;
+	display: block;
+	padding: 5px 15px;
+}
+
+.wildcats-menu li:hover{
+	background: rgba(0, 0, 0, 0.3);
+}
+
+.wildcats-menu li i{
+	padding-right: 5px;
+}
+
+.breadcrumb{
+	list-style: none;
+	text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.breadcrumb span,
+.breadcrumb a {
+	color: #fff;
+	font-size: 11px;
+	padding: 5px 10px;
+	display: block;
+}
+
+.breadcrumb a{
+	color: #f6c717;
+	cursor: pointer;
+}
+
+.breadcrumb li{
+	display: inline-block;
+}

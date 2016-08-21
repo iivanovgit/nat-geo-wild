@@ -1,0 +1,52 @@
+img{
+    width: 100%;
+    height: auto;
+}
+
+.carousel{
+     position: relative;
+}
+
+.carousel-wrapper{
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+.carousel-wrapper .carousel-item{
+    /*height: 100vh;*/
+    /*display: none;*/
+    opacity: 0;
+    height: 0px;
+    -webkit-transition: 0.2s ease-in-out;
+          transition: 0.2s ease-in-out;
+}
+
+.carousel-wrapper .carousel-item.active{
+    /*display: block;*/
+    height: 100vh;
+    opacity: 1;
+}
+
+.carousel-wrapper .carousel-item img{
+    height: 100%;
+}
+
+.carousel .carousel-controls{
+    position: absolute;
+    bottom: 60px;
+    left: 80px;
+    z-index: 3;
+}
+
+.carousel .carousel-controls span{
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+    height: 8px;
+    width: 60px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.carousel .carousel-controls span.active{
+    background: #ffc815;
+}

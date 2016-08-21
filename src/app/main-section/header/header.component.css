@@ -1,0 +1,81 @@
+header{
+	padding: 0px 0px 0px 80px;
+	margin: 0px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: calc(100vw - 140px);
+	background: rgba(0,0,0,0.3);
+	background: -moz-linear-gradient(left, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 35%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 65%, rgba(0,0,0,0.3) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,0,0,0.3)), color-stop(35%, rgba(0,0,0,0.1)), color-stop(50%, rgba(0,0,0,0.1)), color-stop(65%, rgba(0,0,0,0.1)), color-stop(100%, rgba(0,0,0,0.3)));
+	background: -webkit-linear-gradient(left, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 35%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 65%, rgba(0,0,0,0.3) 100%);
+	background: -o-linear-gradient(left, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 35%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 65%, rgba(0,0,0,0.3) 100%);
+	background: -ms-linear-gradient(left, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 35%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 65%, rgba(0,0,0,0.3) 100%);
+	background: linear-gradient(to right, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 35%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 65%, rgba(0,0,0,0.3) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=1 );
+	background-repeat: no-repeat;
+	background-position: 80px top;
+    /*z-index: 5;*/
+	z-index: 15;
+}
+header .logo{
+	padding: 15px 20px;
+	margin: 0px;
+	display: block;
+	width: 70px;
+	background:#000;
+	float: left;
+
+}
+header .logo span{
+	display: block;
+	width: 70px;
+	height: 30px;
+	background-color: #000;
+	background-image: url(../../../assets/images/logo.svg);
+	background-repeat: no-repeat;
+	background-position: center; 
+}
+
+header ul{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	display: table;
+	float: right;
+	width: 80%;
+}
+
+header ul li{
+	display: table-cell;
+	
+}
+
+header ul li:first-child{
+	font-size: 14px;
+	color: #eee;
+	font-weight: bold;
+	padding: 18px 0px 0px 0px;
+	letter-spacing: 8px;
+	word-spacing: 5px;
+}
+
+header ul li a{
+	font-weight: bold;
+	font-size: 14px;
+	color: #000;
+	background:#fff;
+	text-align: center;
+	display: block;
+	padding: 20px 10px 0px 10px;
+	height: 40px;
+	transition: all .2s ease-in-out;
+    text-decoration: none;
+}
+
+header ul li a:hover{
+	color: #fff;
+	background:#000;
+	text-decoration: none;
+
+}

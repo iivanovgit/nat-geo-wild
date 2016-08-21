@@ -1,0 +1,74 @@
+<div class="page" *ngIf="wildcat">
+  <div class="page-title type-1">
+    <div class="page-title-inner" [ngStyle]="{ 'background-image': 'url(' + wildcat.img + ')'}">
+      <h1 class="text-right">{{wildcat.name}}</h1>
+      <ul class="breadcrumb">
+        <li><a routerLink="/">home</a></li>
+        <li><a routerLink="/wildcats">wildcats</a></li>
+        <li><span>{{wildcat.name}}</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-inner">
+    <div class="content-left">
+      <h2>The snow mountain predator</h2>
+      <p>The snow leopard (Panthera uncia syn. Uncia uncia) is a large cat native to the mountain ranges of Central and South
+        Asia. It is listed as endangered on the IUCN Red List of Threatened Species because as of 2003, the size of the global
+        population was estimated at 4,080–6,590 adults, of which fewer than 2,500 individuals may reproduce in the wild.[1]
+        <br><br> Drawing from the latest available data, the Global Snow Leopard and Eco-System Protection Program (GSLEP)[3]
+        uses an estimate of between 3,920 and 6,390 individuals in the wild.<br><br> Snow leopards inhabit alpine and subalpine
+        zones at elevations from 3,000 to 4,500 m (9,800 to 14,800 ft). In the northern range countries, they also occur
+        at lower elevations.[4]<br><br> Taxonomically, the snow leopard was classified as Uncia uncia since the early 1930s.[2]
+        Based on genotyping studies, the cat has been considered a member of the genus Panthera since 2008.[1][5] Two subspecies
+        have been attributed, but genetic differences between the two have not been settled.[1]</p>
+    </div>
+    <div class="content-right">
+      <img [src]="wildcat.gallery[0]" alt="">
+
+      <div class="btn-group btn-group-justified" role="group" aria-label="...">
+        <div class="btn-group" role="group">
+          <i class="circle-red">en</i>
+          <strong>status</strong>
+          <span>Endangered</span>
+        </div>
+        <div class="btn-group" role="group">
+          <i class="fa fa-eye"></i>
+          <strong>population</strong>
+          <span>57+</span>
+        </div>
+        <div class="btn-group" role="group">
+          <i class="fa fa-globe"></i>
+          <strong>habitats</strong>
+          <span>Cold High Mountains</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- /page inner -->
+</div>
+<!-- /page -->
+
+
+<div class="page-center">
+  <div class="content">
+    <h1>Distribution and habitat</h1>
+    <hr>
+    <p>The snow leopard is distributed from the west of Lake Baikal through southern Siberia, in the Kunlun Mountains, in the
+      Russian Altai mountains, Sayan and Tannu-Ola Mountains, in the Tian Shan, across Kazakhstan, Kyrgyzstan, Tajikistan,
+      and Uzbekistan to the Hindu Kush in eastern Afghanistan, Karakoram in northern Pakistan, in the Pamir Mountains, and
+      in the high altitudes of the Himalayas in India, Nepal, and Bhutan, and the Tibetan Plateau. In Mongolia, it is found
+      in the Mongolian and Gobi Altai Mountains and the Khangai Mountains. In Tibet, it is found up to the Altyn-Tagh in
+      the north.[4][25]
+      <br><br> Potential snow leopard habitat in the Indian Himalayas is estimated at less than 90,000 km2 (35,000 sq mi)
+      in the states of Jammu and Kashmir, Uttarakhand, Himachal Pradesh, Sikkim, and Arunachal Pradesh, of which about 34,000
+      km2 (13,000 sq mi) is considered good habitat, and 14.4% is protected. In the beginning of the 1990s, the Indian snow
+      leopard population was estimated at roughly 200–600 individuals living across about 25 protected areas.[4]<br><br>      In summer, snow leopards usually live above the tree line on mountainous meadows and in rocky regions at altitudes
+      from 2,700 to 6,000 m (8,900 to 19,700 ft). In winter, they come down into the forests to altitudes around 1,200 to
+      2,000 m (3,900 to 6,600 ft). Snow leopards prefer rocky, broken terrain, and can travel without difficulty in snow
+      up to 85 cm (33 in) deep, although they prefer to use existing trails made by other animals.[19]<br><br> Global warming
+      has caused the tree line to be increased in altitude, resulting in the decrease of wild prey that depend on the plants
+      for food.
+    </p>
+  </div>
+</div>
