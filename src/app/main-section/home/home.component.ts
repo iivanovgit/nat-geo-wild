@@ -16,13 +16,19 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   private sub: Subscription;
 
-  items: FirebaseListObservable<any>;
+  fireSlides: Slide[];
+
+  // items: FirebaseListObservable<any>;
 
   constructor(
     private service: SlideService,
     private route: ActivatedRoute,
     af: AngularFire) {
-    this.items = af.database.list('/home/slides');
+    // this.items = af.database.list('/home/slides');
+    af.database.list('home/slides').subscribe(item => {
+      this.fireSlides = item;
+      console.log('new proba : ' + JSON.stringify(this.fireSlides));
+    });
   }
 
   ngOnInit() {
@@ -39,10 +45,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   viewSlide(index) {
-    for (let i = 0; i < this.slides.length; i++) {
-      this.slides[i].active = false;
+    for (let i = 0; i < this.fireSlides.length; i++) {
+      this.fireSlides[i].active = false;
     }
-    this.slides[index].active = true;
+    this.fireSlides[index].active = true;
   }
 
 }

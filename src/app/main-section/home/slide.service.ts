@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 
-
 export class Slide {
   constructor(
     public title: string,
@@ -8,7 +7,7 @@ export class Slide {
     public active: boolean) { }
 }
 
-let SLIDES = [{
+const SLIDES = [{
   title: 'slide 1 title',
   url: '../../assets/images/slide1.jpg',
   active: false
@@ -27,6 +26,8 @@ let SLIDES = [{
 }];
 
 let slidesPromise = Promise.resolve(SLIDES);
+
+
 
 @Injectable()
 export class SlideService {
