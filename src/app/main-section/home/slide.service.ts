@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 export class Slide {
   constructor(
@@ -7,29 +8,13 @@ export class Slide {
     public active: boolean) { }
 }
 
-const SLIDES = [{
-  title: 'slide 1 title',
-  url: '../../assets/images/slide1.jpg',
-  active: false
-}, {
-  title: 'slide 2 title',
-  url: '../../assets/images/slide2.jpg',
-  active: false
-}, {
-  title: 'slide 3 title',
-  url: '../../assets/images/slide3.jpg',
-  active: true
-}, {
-  title: 'slide 1 title',
-  url: '../../assets/images/slide1.jpg',
-  active: false
-}];
-
-let slidesPromise = Promise.resolve(SLIDES);
-
-
-
 @Injectable()
 export class SlideService {
-  getSlides() { return slidesPromise; }
+  private slides: FirebaseListObservable<any>;
+
+  constructor(af: AngularFire) {
+    this.slides = af.database.list('/home/slides');
+  }
+
+  getSlides() { return this.slides; }
 }

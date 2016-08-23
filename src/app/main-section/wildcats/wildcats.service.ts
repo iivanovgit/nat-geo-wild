@@ -80,6 +80,7 @@ let wildcatsPromise = Promise.resolve(WILDCATS);
 
 @Injectable()
 export class WildcatsService {
+
   getWildcats() { return wildcatsPromise; }
 
   getWildcat(id: number | string) {
