@@ -9,7 +9,7 @@ export class Slide {
 }
 
 @Injectable()
-export class SlideService {
+export class HomeService {
   private slides: FirebaseListObservable<any>;
 
   constructor(af: AngularFire) {

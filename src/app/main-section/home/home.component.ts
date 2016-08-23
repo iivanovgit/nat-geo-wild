@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Slide, SlideService } from './slide.service';
+import { Slide, HomeService } from './home.service';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 
   constructor(
-    private service: SlideService,
+    private service: HomeService,
     private route: ActivatedRoute) {
   }
 

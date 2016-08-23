@@ -7,14 +7,18 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 
+import { HomeService } from './main-section/home/home.service';
+import { WildcatsService } from './main-section/wildcats/wildcats.service';
+
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { MainSectionComponent } from './main-section/main-section.component';
 import { HeaderComponent } from './main-section/header/header.component';
 import { FooterComponent } from './main-section/footer/footer.component';
-import { HomeModule } from './main-section/home/home.module';
 
-import { WildcatsModule } from './main-section/wildcats/wildcats.module';
-import { HeroesModule } from './main-section/heroes/heroes.module';
+import { AdminComponent } from './admin/admin.component';
+
+
+
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCaWUokAXGAu4ehY9AH1OheIcQjgSZppN8',
@@ -29,19 +33,18 @@ const firebaseConfig = {
     SideMenuComponent,
     MainSectionComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
     CommonModule,
     FormsModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    routing,
-    HeroesModule,
-    WildcatsModule,
-    HomeModule
+    routing
+
   ],
-  providers: [],
+  providers: [HomeService, WildcatsService],
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })
