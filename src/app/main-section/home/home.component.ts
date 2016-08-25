@@ -24,9 +24,10 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.sub = this.route
       .params
       .subscribe(() => {
-        af.database.list('home/slides').subscribe(slides => {
-          this.slides = slides;
-        });
+        af.database.list('home/slides')
+          .subscribe(slides => {
+            this.slides = slides;
+          });
       });
   }
 
