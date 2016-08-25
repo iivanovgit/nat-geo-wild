@@ -7,16 +7,21 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 
-import { HomeService } from './main-section/home/home.service';
-import { WildcatsService } from './main-section/wildcats/wildcats.service';
+import { HomeService, HomeComponent } from './main-section/home';
+<<<<<<< HEAD
+import { WildcatsService, WildcatComponent, WildcatsComponent } from './main-section/wildcats';
+=======
+import { WildcatsService, WildcatComponent, WildcatsComponent  } from './main-section/wildcats';
+>>>>>>> 66ae3fe93a9c4c6d9a1f8b5ca442a8c0b54fa206
 
-import { SideMenuComponent } from './side-menu/side-menu.component';
-import { MainSectionComponent } from './main-section/main-section.component';
-import { HeaderComponent } from './main-section/header/header.component';
-import { FooterComponent } from './main-section/footer/footer.component';
+import { SideMenuComponent } from './side-menu';
+import { MainSectionComponent } from './main-section';
+import { HeaderComponent } from './main-section/header';
+import { FooterComponent } from './main-section/footer';
 
-import { AdminComponent } from './admin/admin.component';
+import { AdminComponent } from './admin';
 
+import { ClickOutsideDirective } from './directives';
 
 
 
@@ -34,7 +39,15 @@ const firebaseConfig = {
     MainSectionComponent,
     HeaderComponent,
     FooterComponent,
-    AdminComponent
+    AdminComponent,
+    HomeComponent,
+    WildcatComponent,
+<<<<<<< HEAD
+    WildcatsComponent,
+    ClickOutsideDirective
+=======
+    WildcatsComponent
+>>>>>>> 66ae3fe93a9c4c6d9a1f8b5ca442a8c0b54fa206
   ],
   imports: [
     BrowserModule,

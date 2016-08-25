@@ -12,23 +12,22 @@
         <span></span>
       </div>
     </li>
-    <ul (click)="closeSideMenu()">
-      <li routerLinkActive="active" routerLink="/wildcats/3"><a class="cat-button fly-out-right"><i></i></a></li>
-      <li routerLinkActive="active"><a routerLink="/wildcats/2" class="bird-button fly-out-right"><i></i></a></li>
-      <li><a href="#" class="fish-button"><i></i></a></li>
-      <li routerLinkActive="active"><a routerLink="/wildcats/1" class="whale-button fly-out-right"><i></i></a></li>
-      <li routerLinkActive="active"><a routerLink="/home" class="elephant-button fly-out-right"><i></i></a></li>
-    </ul>
+    <li>
+      <ul (click)="closeSideMenu()">
+        <li routerLinkActive="active" routerLink="/wildcats/3"><a class="cat-button fly-out-right"><i></i></a></li>
+        <li routerLinkActive="active"><a routerLink="/wildcats/2" class="bird-button fly-out-right"><i></i></a></li>
+        <li><a href="#" class="fish-button"><i></i></a></li>
+        <li routerLinkActive="active"><a routerLink="/wildcats/1" class="whale-button fly-out-right"><i></i></a></li>
+        <li routerLinkActive="active"><a [routerLink]="['']" class="elephant-button fly-out-right"><i></i></a></li>
+      </ul>
   </ul>
   <ul class="bottom-links">
     <li class="search-menu">
-      <div class="search-button" (click)="openSearch()" *ngIf="!menuSearch">
-        <i class="fa fa-search"></i>
+      <div class="search-button" (click)="toggleSearch()">
+        <i class="fa fa-search" *ngIf="!search"></i>
+        <i class="fa fa-close" *ngIf="search"></i>
       </div>
-      <div class="search-button" (click)="closeSearch()" *ngIf="menuSearch">
-        <i class="fa fa-close"></i>
-      </div>
-      <div class="search-box mat-design" [class.open]="menuSearch">
+      <div class="search-box mat-design" [class.open]="search">
         <div class="group">
           <input type="text" required>
           <span class="highlight"></span>
@@ -44,7 +43,8 @@
 <div id="sidebox" class="sidebar-menu" [class.open]="menuOpen" (click)="closeSideMenu()">
   <span>Menu</span>
   <ul class="nav nav-stacked">
-    <li routerLinkActive="active"><a routerLink="/home" class="fly-out-right">Home</a></li>
+    <li><a routerLink="/" class="fly-out-right">Home</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['']" class="fly-out-right">Home</a></li>
     <li routerLinkActive="active"><a routerLink="/wildcats" class="fly-out-right">Wild Cats</a></li>
     <li routerLinkActive="active"><a href="" class="fly-out-right">Reservation</a></li>
     <li routerLinkActive="active"><a href="" class="fly-out-right">About us</a></li>

@@ -23,8 +23,7 @@ export class WildcatsComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.sub = this.route
       .params
-      .subscribe(params => {
-        this.selectedId = +params['id'];
+      .subscribe(() => {
         this.service.getWildcats()
           .then(wildcats => this.wildcats = wildcats);
       });

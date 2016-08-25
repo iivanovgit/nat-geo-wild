@@ -130,7 +130,7 @@
 	border: 0px;
 }
 
-.menu-box ul li:first-child{
+.menu-box>ul>li:first-child{
 	margin-bottom: 53px;
 }
 

@@ -8,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class SideMenuComponent implements OnInit {
   @Output() menuClicked = new EventEmitter<boolean>();
   @Input() menuOpen: boolean = false;
-  private menuSearch: boolean = false;
+  private search: boolean = false;
 
   constructor() { }
 
@@ -18,7 +18,7 @@ export class SideMenuComponent implements OnInit {
   openSideMenu() {
     this.menuOpen = true;
     this.menuClicked.emit(this.menuOpen);
-    this.menuSearch = false;
+    this.search = false;
   }
 
   closeSideMenu() {
@@ -26,10 +26,7 @@ export class SideMenuComponent implements OnInit {
     this.menuClicked.emit(this.menuOpen);
   }
 
-  openSearch() {
-    this.menuSearch = true;
-  }
-  closeSearch() {
-    this.menuSearch = false;
+  toggleSearch() {
+    this.search = !this.search;
   }
 }

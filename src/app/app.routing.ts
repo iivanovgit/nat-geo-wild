@@ -11,7 +11,7 @@ const appRoutes: Routes = [
     //     path: '',
     //     component: MainSectionComponent,
     //     children: [
-    //         { path: '', component: HomeComponent },
+    //         { path: 'home', component: HomeComponent },
     //         { path: 'wildcats', component: WildcatsComponent },
     //         { path: 'wildcats/:id', component: WildcatComponent }
     //     ]
