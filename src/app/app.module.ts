@@ -8,11 +8,8 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 
 import { HomeService, HomeComponent } from './main-section/home';
-<<<<<<< HEAD
 import { WildcatsService, WildcatComponent, WildcatsComponent } from './main-section/wildcats';
-=======
-import { WildcatsService, WildcatComponent, WildcatsComponent  } from './main-section/wildcats';
->>>>>>> 66ae3fe93a9c4c6d9a1f8b5ca442a8c0b54fa206
+
 
 import { SideMenuComponent } from './side-menu';
 import { MainSectionComponent } from './main-section';
@@ -42,12 +39,8 @@ const firebaseConfig = {
     AdminComponent,
     HomeComponent,
     WildcatComponent,
-<<<<<<< HEAD
     WildcatsComponent,
     ClickOutsideDirective
-=======
-    WildcatsComponent
->>>>>>> 66ae3fe93a9c4c6d9a1f8b5ca442a8c0b54fa206
   ],
   imports: [
     BrowserModule,
