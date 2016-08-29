@@ -16,11 +16,13 @@ const appRoutes: Routes = [
     //         { path: 'wildcats/:id', component: WildcatComponent }
     //     ]
     // },
-    { path: '', component: HomeComponent },
+
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: 'home', component: HomeComponent},
     { path: 'wildcats', component: WildcatsComponent },
     { path: 'wildcats/:id', component: WildcatComponent },
     { path: 'admin', component: AdminComponent },
-    { path: '**', redirectTo: '' }
+    { path: '*', redirectTo: '' }
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);

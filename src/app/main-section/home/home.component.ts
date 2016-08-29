@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AngularFire } from 'angularfire2';
 
 import { Slide, HomeService } from './home.service';
 import { Subscription } from 'rxjs/Subscription';
@@ -19,27 +18,18 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   constructor(
     private service: HomeService,
-    private route: ActivatedRoute,
-    private af: AngularFire) {
+    private route: ActivatedRoute) {
+  }
+
+  ngOnInit() {
     this.sub = this.route
       .params
       .subscribe(() => {
-        af.database.list('home/slides')
+        this.service.getSlides()
           .subscribe(slides => {
             this.slides = slides;
           });
       });
-  }
-
-  ngOnInit() {
-    // this.sub = this.route
-    //   .params
-    //   .subscribe(params => {
-    //     this.service.getSlides()
-    //       .subscribe(slides => {
-    //         this.slides = slides;
-    //       });
-    //   });
   }
 
   ngOnDestroy() {
