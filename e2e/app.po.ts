@@ -1,4 +1,6 @@
-export class NatGeoRc5Page {
+import { browser, element, by } from 'protractor/globals';
+
+export class Test1Page {
   navigateTo() {
     return browser.get('/');
   }

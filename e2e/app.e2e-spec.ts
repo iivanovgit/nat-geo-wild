@@ -1,10 +1,10 @@
-import { NatGeoRc5Page } from './app.po';
+import { Test1Page } from './app.po';
 
-describe('nat-geo-rc5 App', function() {
-  let page: NatGeoRc5Page;
+describe('test1 App', function() {
+  let page: Test1Page;
 
   beforeEach(() => {
-    page = new NatGeoRc5Page();
+    page = new Test1Page();
   });
 
   it('should display message saying app works', () => {

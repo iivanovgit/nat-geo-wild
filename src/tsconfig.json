@@ -13,6 +13,10 @@
     "typeRoots": [
       "../node_modules/@types"
     ],
+    "files": [
+      "../typings/index.d.ts"
+    ],
+    
     "types": [
       "jasmine",
       "firebase"

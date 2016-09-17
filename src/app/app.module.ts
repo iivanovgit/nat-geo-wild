@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, ApplicationRef } from '@angular/core';
+import { NgModule } from '@angular/core';
 // import { Routes, RouterModule } from '@angular/router';
 import { routing } from './app.routing';
 import { CommonModule } from '@angular/common';

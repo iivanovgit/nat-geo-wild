@@ -12,7 +12,7 @@
   <div class="page-inner">
     <div class="content-left">
       <h2>{{wildcat.title}}</h2>
-      <p>{{wildcat.desc}}</p>
+      <p [innerHTML]="wildcat.desc"></p>
     </div>
     <div class="content-right">
       <img [src]="wildcat.gallery[0]" alt="">
@@ -46,6 +46,6 @@
   <div class="content">
     <h1>Distribution and habitat</h1>
     <hr>
-    <p>{{wildcat.desc2}}</p>
+    <p [innerHTML]="wildcat.desc2"></p>
   </div>
 </div>
