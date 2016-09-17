@@ -22,6 +22,6 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## With Angular CLi
 
 1. `ng new <nat-geo>`
-2. migrate src
+2.  migrate app/ assets/
 3. `npm install firebase angularfire2 --save`
 4. `typings install firebase --save` and then modified files in tsconfig.json: `"files": [ ... "typings/index.d.ts" ]`
