@@ -10,9 +10,26 @@ const appRoutes: Routes = [
     {
         path: '',
         children: [
-            { path: '', component: HomeComponent },
-            { path: 'wildcats', component: WildcatsComponent },
-            { path: 'wildcats/:id', component: WildcatComponent }
+            {
+                path: '', component: HomeComponent,
+                data: {
+                    title: 'Wild Cats'
+                }
+            },
+            {
+                path: 'wildcats',
+                component: WildcatsComponent,
+                data: {
+                    title: 'Wild Cats'
+                }
+            },
+            {
+                path: 'wildcats/:id',
+                component: WildcatComponent,
+                data: {
+                    title: 'Wild Cats'
+                }
+            }
         ]
     },
     {
