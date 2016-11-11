@@ -13,7 +13,7 @@ const appRoutes: Routes = [
             {
                 path: '', component: HomeComponent,
                 data: {
-                    title: 'Wild Cats'
+                    title: 'Nat Geo Wild'
                 }
             },
             {
@@ -27,7 +27,7 @@ const appRoutes: Routes = [
                 path: 'wildcats/:id',
                 component: WildcatComponent,
                 data: {
-                    title: 'Wild Cats'
+                    title: 'Wild Cats - Details'
                 }
             }
         ]
@@ -35,6 +35,9 @@ const appRoutes: Routes = [
     {
         path: 'admin',
         component: AdminComponent,
+        data: {
+            title: 'Admin'
+        },
         canActivate: []
     },
     { path: '**', redirectTo: '' }
