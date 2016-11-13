@@ -1,7 +1,8 @@
-import { Component, OnDestroy, ApplicationRef } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { Title } from '@angular/platform-browser';
-
+import 'rxjs/Rx';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-root',
@@ -12,37 +13,21 @@ import { Title } from '@angular/platform-browser';
 export class AppComponent implements OnDestroy {
   private appMenuOpen: boolean = false;
 
-  constructor(
-    private _titleService: Title,
-    private _applicationRef: ApplicationRef,
-    private _router: Router) {
-    // _router.events.subscribe(() => {
-    //   this._applicationRef.tick();
-    //   setTimeout(() => {
-    //     this._applicationRef.tick();
-    //   }, 100);
-    // });
+  sub: Subscription;
 
-    _router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        let title = this.getTitle(_router.routerState, _router.routerState.root).join('-');
-        // console.log('title', title);
-        _titleService.setTitle(title);
-      }
-    });
 
-  }
-
-  getTitle(state, parent) {
-    let data = [];
-    if (parent && parent.snapshot.data && parent.snapshot.data.title) {
-      data.push(parent.snapshot.data.title);
-    }
-
-    if (state && parent) {
-      data.push(... this.getTitle(state, state.firstChild(parent)));
-    }
-    return data;
+  constructor(private titleService: Title, private router: Router) {
+    this.sub = this.router.events
+      .filter(event => event instanceof NavigationEnd)
+      .map(_ => this.router.routerState.root)
+      .map(route => {
+        while (route.firstChild) route = route.firstChild;
+        return route;
+      })
+      .flatMap(route => route.data)
+      .subscribe(data => {
+        this.titleService.setTitle(data['title'] || 'My default title');
+      });
   }
 
   ngOnDestroy() {
