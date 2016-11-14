@@ -6,7 +6,9 @@ import { AuthService } from './services/auth-service';
   templateUrl: 'admin-login.component.html'
 })
 export class AdminLoginComponent {
-
+  model: any = {};
+  loading = false;
+  
   constructor(private auth: AuthService, private router: Router) { }
 
   signInWithEmailAndPassword(u, p): void {

@@ -1,4 +1,4 @@
-import { AngularFireModule, AuthMethods } from 'angularfire2';
+import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
 
 const firebaseConfig = {
@@ -9,8 +9,8 @@ const firebaseConfig = {
 };
 
 const firebaseAuthConfig = {
-  method: AuthMethods.Popup,
-  remember: 'default'
+  provider: AuthProviders.Password,
+  method: AuthMethods.Password
 };
 
 

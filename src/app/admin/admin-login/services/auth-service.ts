@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AuthProviders, FirebaseAuth, FirebaseAuthState } from 'angularfire2';
+import { AuthProviders, AuthMethods, FirebaseAuth, FirebaseAuthState } from 'angularfire2';
 
 
 @Injectable()
@@ -22,29 +22,34 @@ export class AuthService {
   }
 
   signInWithEmailAndPassword(u, p) {
-    let user: string = u;
-    let pass: string = p;
+    let user = u;
+    let pass = p;
     return this.auth$.login({
       email: user,
       password: pass
-    }).catch(error => console.log('ERROR @ AuthService#signIn() :', error));
+    }, {
+        method: AuthMethods.Password,
+      }).catch(error => {
+        debugger;
+        console.log('ERROR @ AuthService#signIn() :', error);
+      });
   }
 
-  signIn(provider: number): firebase.Promise<FirebaseAuthState> {
-    return this.auth$.login({ provider })
+  signIn(provider: number, method): firebase.Promise<FirebaseAuthState> {
+    return this.auth$.login({ provider, method })
       .catch(error => console.log('ERROR @ AuthService#signIn() :', error));
   }
 
   signInWithGithub(): firebase.Promise<FirebaseAuthState> {
-    return this.signIn(AuthProviders.Github);
+    return this.signIn(AuthProviders.Github, AuthMethods.Redirect);
   }
 
   signInWithGoogle(): firebase.Promise<FirebaseAuthState> {
-    return this.signIn(AuthProviders.Google);
+    return this.signIn(AuthProviders.Google, AuthMethods.Popup);
   }
 
   signInWithTwitter(): firebase.Promise<FirebaseAuthState> {
-    return this.signIn(AuthProviders.Twitter);
+    return this.signIn(AuthProviders.Twitter, AuthMethods.Redirect);
   }
 
   signOut(): void {
