@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import 'rxjs/Rx';
@@ -10,8 +10,7 @@ import { Subscription } from 'rxjs/Subscription';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnDestroy {
-  private appMenuOpen: boolean = false;
+export class AppComponent {
 
   sub: Subscription;
 
@@ -30,15 +29,4 @@ export class AppComponent implements OnDestroy {
       });
   }
 
-  ngOnDestroy() {
-
-  }
-
-  appOpenSideBar(value: boolean) {
-    this.appMenuOpen = value;
-  }
-
-  appMenuClose() {
-    this.appMenuOpen = false;
-  }
 }

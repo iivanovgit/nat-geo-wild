@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-// import { Routes, RouterModule } from '@angular/router';
-import { routing } from './app.routing';
-
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { AngularFireModule } from 'angularfire2';
+
+import { routing } from './app.routing';
+
+import { FirebaseModule } from './firebase';
 
 import { HomeService, HomeComponent } from './main-section/home';
 import { WildcatsService, WildcatComponent, WildcatsComponent } from './main-section/wildcats';
@@ -17,18 +17,15 @@ import { MainSectionComponent } from './main-section';
 import { HeaderComponent } from './main-section/header';
 import { FooterComponent } from './main-section/footer';
 
-import { AdminComponent } from './admin';
+
 
 import { ClickOutsideDirective } from './directives';
+import { ClientComponent } from './client/client.component';
+
+import { AdminComponent, AdminHeaderComponent, AdminDashboardComponent, AdminLoginComponent, AuthService, AuthGuard, UnauthGuard } from './admin';
 
 
 
-const firebaseConfig = {
-  apiKey: 'AIzaSyCaWUokAXGAu4ehY9AH1OheIcQjgSZppN8',
-  authDomain: 'nat-geo-wild.firebaseapp.com',
-  databaseURL: 'https://nat-geo-wild.firebaseio.com',
-  storageBucket: 'nat-geo-wild.appspot.com',
-};
 
 @NgModule({
   declarations: [
@@ -41,17 +38,20 @@ const firebaseConfig = {
     HomeComponent,
     WildcatComponent,
     WildcatsComponent,
-    ClickOutsideDirective
+    ClickOutsideDirective,
+    ClientComponent,
+    AdminDashboardComponent,
+    AdminLoginComponent,
+    AdminHeaderComponent
   ],
   imports: [
     BrowserModule,
     CommonModule,
     FormsModule,
-    AngularFireModule.initializeApp(firebaseConfig),
+    FirebaseModule,
     routing
-
   ],
-  providers: [HomeService, WildcatsService],
+  providers: [HomeService, WildcatsService, AuthService, AuthGuard, UnauthGuard],
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })

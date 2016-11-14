@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { AuthService } from './admin-login/services/auth-service';
 
 @Component({
   selector: 'app-admin',
-  templateUrl: 'admin.component.html',
-  styleUrls: ['admin.component.css']
+  template: `
+  <admin-header
+      [authenticated]="auth.authenticated"
+      (signOut)="signOut()"></admin-header>
+  <router-outlet></router-outlet>
+  `
 })
-export class AdminComponent implements OnInit {
+export class AdminComponent{
 
-  constructor() { }
+  constructor(private auth: AuthService) {}
 
-  ngOnInit() {
+  signOut(): void {
+    this.auth.signOut();
   }
-
 }
