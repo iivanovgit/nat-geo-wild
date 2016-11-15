@@ -21,20 +21,6 @@ export class AuthService {
     return this.authenticated ? this.authState.uid : '';
   }
 
-  signInWithEmailAndPassword(u, p) {
-    let user = u;
-    let pass = p;
-    return this.auth$.login({
-      email: user,
-      password: pass
-    }, {
-        method: AuthMethods.Password,
-      }).catch(error => {
-        debugger;
-        console.log('ERROR @ AuthService#signIn() :', error);
-      });
-  }
-
   signIn(provider: number, method): firebase.Promise<FirebaseAuthState> {
     return this.auth$.login({ provider, method })
       .catch(error => console.log('ERROR @ AuthService#signIn() :', error));

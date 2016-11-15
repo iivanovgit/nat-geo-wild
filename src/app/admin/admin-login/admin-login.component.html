@@ -1,27 +1,39 @@
- <!--<h2>Login</h2>
-    <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required />
-            <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
-        </div>
-        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
-            <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
-        </div>
-        <div class="form-group">
-            <button type="submit" (click)="signInWithEmailAndPassword(model.username, model.password)">Login</button>
-            
-        </div>
-    </form>-->
 
-    
-    <div class="g-row sign-in">
-      <div class="g-col">
+<div class="row">
+    <div class="small-12 medium-8 medium-centered large-6 large-centered columns">
+        <div class="callout alert" *ngIf="error">
+            {{ error }}
+        </div>
+        <h2>Login</h2>
+        <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+            <div class="row">
+                <div class="small-12 columns">
+                    <label> Enter email address
+                        <input type="email" name="email" placeholder="e.g email@address.com" (ngModel)="email" requred>
+                    </label>
+                </div>
+                <div class="small-12 columns">
+                    <label> Password
+                        <input type="password" name="password" (ngModel)="password" required>
+                    </label>
+                </div>
+                <div class="small-12 columns">
+                    <button type="submit" class="button" [disabled]="!formData.valid">Submit</button>
+                    <br/>
+                    <a routerLink="/signup">Don't have an account?</a> &bull; <a routerLink="/password-reset">Forgotten password?</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<div class="g-row sign-in">
+    <div class="g-col">
         <h1 class="sign-in__heading">Sign in</h1>
         <button class="sign-in__button" (click)="signInWithGithub()" type="button">GitHub</button>
         <button class="sign-in__button" (click)="signInWithGoogle()" type="button">Google</button>
         <button class="sign-in__button" (click)="signInWithTwitter()" type="button">Twitter</button>
-      </div>
     </div>
+</div>
