@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 
 import { routing } from './app.routing';
 
-import { FirebaseModule } from './firebase';
+import { FirebaseModule, FirebaseService } from './firebase';
 
 import { HomeService, HomeComponent } from './main-section/home';
 import { WildcatsService, WildcatComponent, WildcatsComponent } from './main-section/wildcats';
@@ -51,7 +51,7 @@ import { AdminComponent, AdminHeaderComponent, AdminDashboardComponent, AdminLog
     FirebaseModule,
     routing
   ],
-  providers: [HomeService, WildcatsService, AuthService, AuthGuard, UnauthGuard],
+  providers: [FirebaseService, HomeService, WildcatsService, AuthService, AuthGuard, UnauthGuard],
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })

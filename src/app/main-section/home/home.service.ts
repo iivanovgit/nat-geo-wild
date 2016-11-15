@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { FirebaseService } from '../../firebase/firebase-service';
 
 export class Slide {
   constructor(
@@ -10,11 +10,12 @@ export class Slide {
 
 @Injectable()
 export class HomeService {
-  private slides: FirebaseListObservable<any>;
 
-  constructor(af: AngularFire) {
-    this.slides = af.database.list('/home/slides');
+
+  constructor(private fs: FirebaseService) {
   }
 
-  getSlides() { return this.slides; }
+  getSlides() {
+    return this.fs.getHomeSlides();
+  }
 }

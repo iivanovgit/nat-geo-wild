@@ -1,0 +1,25 @@
+{
+    "authentication": {},
+    "client-side": {
+        "home": {
+            "slides": [
+                null,
+                {
+                    "active": true,
+                    "title": "slide 1 title",
+                    "url": "../../assets/images/slide1.jpg"
+                },
+                {
+                    "active": false,
+                    "title": "slide 2 title",
+                    "url": "../../assets/images/slide2.jpg"
+                },
+                {
+                    "active": false,
+                    "title": "slide 3 title",
+                    "url": "../../assets/images/slide3.jpg"
+                }
+            ]
+        }
+    }
+}
