@@ -25,7 +25,7 @@ export class AppComponent {
       })
       .flatMap(route => route.data)
       .subscribe(data => {
-        this.titleService.setTitle(data['title'] || 'My default title');
+        this.titleService.setTitle((data['title'] + ' ' + 'Nat Geo Wild') || 'Nat Geo Wild');
       });
   }
 

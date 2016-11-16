@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-private',
   templateUrl: './private.component.html',
   styleUrls: ['./private.component.css']
 })
-export class PrivateComponent implements OnInit {
+export class PrivateComponent {
 
+  private appMenuOpen: boolean = false;
+  
   constructor() { }
-
-  ngOnInit() {
+   appOpenSideBar(value: boolean) {
+    this.appMenuOpen = value;
   }
 
+  appMenuClose() {
+    this.appMenuOpen = false;
+  }
 }

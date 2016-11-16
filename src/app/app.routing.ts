@@ -15,21 +15,21 @@ const appRoutes: Routes = [
             {
                 path: '', component: HomeComponent,
                 data: {
-                    title: 'Nat Geo Wild'
+                    title: ''
                 }
             },
             {
                 path: 'wildcats',
                 component: WildcatsComponent,
                 data: {
-                    title: 'Wild Cats'
+                    title: 'Wild Cats |'
                 }
             },
             {
                 path: 'wildcats/:id',
                 component: WildcatComponent,
                 data: {
-                    title: 'Wild Cats - Details'
+                    title: 'Wild Cats - Details |'
                 }
             }
         ]
@@ -37,7 +37,10 @@ const appRoutes: Routes = [
     {
         path: 'login',
         canActivate: [],
-        component: PrivateComponent
+        component: PrivateComponent,
+        data: {
+            title: 'Sign in |'
+        }
     },
     {
         path: 'admin',
@@ -48,7 +51,7 @@ const appRoutes: Routes = [
                 path: '',
                 component: AdminDashboardComponent,
                 data: {
-                    title: 'Admin Dashboard'
+                    title: 'Admin Dashboard |'
                 }
             }
         ]
