@@ -10,10 +10,10 @@ import { AuthService } from '../services/auth-service';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-  constructor(private _auth: AuthService, private _router: Router) {}
+  constructor(private auth: AuthService, private _router: Router) {}
 
   canActivate(): Observable<boolean> {
-    return this._auth.auth$
+    return this.auth.auth$
       .take(1)
       .map(authState => !!authState)
       .do(authenticated => {

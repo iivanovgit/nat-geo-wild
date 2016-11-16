@@ -1,0 +1,62 @@
+{
+  "rules": {
+    "authentication": {
+      "users": {
+        ".read": "root.child('authentication/users/' + auth.uid + '/isAdmin').val() == true",
+        ".write": "newData.parent().parent().child('authentication/users/' + auth.uid + '/isAdmin').val() == true",
+        "$uid": {
+          ".read": "auth.uid == $uid",
+          ".write": "newData.parent().parent().parent().child('authentication/users/' + auth.uid + '/isAdmin').val() == true",
+          ".indexOn": [
+            "email"
+          ]
+        }
+      },
+      "userReadable": {
+        "$objectType": {
+          "$uid": {
+            ".read": "auth.uid == $uid || root.child('authentication/users/' + auth.uid + '/isAdmin').val() == true",
+            ".write": "newData.parent().parent().parent().parent().child('authentication/users/' + auth.uid + '/isAdmin').val() == true"
+          }
+        }
+      },
+      "userWriteable": {
+        "$objectType": {
+          "$uid": {
+            ".read": "root.child('authentication/users/' + auth.uid + '/isAdmin').val() == true",
+            ".write": "auth.uid == $uid || newData.parent().parent().parent().parent().child('authentication/users/' + auth.uid + '/isAdmin').val() == true"
+          }
+        }
+      },
+      "userOwned": {
+        "$objectType": {
+          "$uid": {
+            ".read": "auth.uid == $uid || root.child('authentication/users/' + auth.uid + '/isAdmin').val() == true",
+            ".write": "auth.uid == $uid || newData.parent().parent().parent().parent().child('authentication/users/' + auth.uid + '/isAdmin').val() == true"
+          }
+        }
+      }
+    },
+    "userOwned": {
+      "preferences": {
+        "$uid": {
+          ".validate": "newData.hasChildren(['useAutotune', 'excuse', 'respectRating']) && newData.child('excuse').val().length < 20 && newData.child('respectRating').val() < 5",
+          "useAutotune": {
+            ".validate": "newData.isBoolean()"
+          },
+          "excuse": {
+            ".validate": "newData.isString()"
+          },
+          "respectRating": {
+            ".validate": "newData.isNumber()"
+          },
+          "$other": {
+            ".validate": "false"
+          },
+          ".read": "auth.uid == $uid",
+          ".write": "auth.uid == $uid"
+        }
+      }
+    }
+  }
+}

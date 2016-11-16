@@ -1,5 +1,29 @@
 {
-    "authentication": {},
+    "authentication": {
+        "users": {
+            "jKKQ440QhwYvQNYxVwJlL20JtLh2": {
+                "name": "Ivan Ivanov",
+                "email": "iivanov.reg@gmail.com",
+                "isAdmin": true
+            },
+            "MdnPZu7JHofjJw6Lbwar5f7x7Fg2": {
+                "name": "admin",
+                "email": "admin@admin.com"
+            }
+        },
+        "userReadable": {},
+        "userWriteable": {},
+        "userOwned": {
+            "preference": {
+                "jKKQ440QhwYvQNYxVwJlL20JtLh2": {
+                    "loveKanye": true
+                },
+                "MdnPZu7JHofjJw6Lbwar5f7x7Fg2": {
+                    "listenToHaters": false
+                }
+            }
+        }
+    },
     "client-side": {
         "home": {
             "slides": [

@@ -1,0 +1,46 @@
+function isUser(auth, userKey){
+    return auth.uid == userKey;
+}
+
+function isAdmin(auth){
+    return root.child('authentication/users/' + auth.uid + '/isAdmin').val() == true;
+}
+
+path /authentication/users {
+    read() { isAdmin(auth) }
+    write() { isAdmin(auth) }
+}
+
+path /authentication/users/{uid} {
+    read() { isUser(auth, uid) }
+    write() { isAdmin(auth) }
+    index() { ["email"] }
+}
+
+path /authentication/userReadable/{objectType}/{uid} {
+    read() { isUser(auth, uid) || isAdmin(auth) }
+    write() { isAdmin(auth) }
+}
+
+path /authentication/userWriteable/{objectType}/{uid} {
+    read() { isAdmin(auth) }
+    write() { isUser(auth, uid) || isAdmin(auth) }
+}
+
+path /authentication/userOwned/{objectType}/{uid} {
+    read() { isUser(auth, uid) || isAdmin(auth) }
+    write() { isUser(auth, uid) || isAdmin(auth) }
+}
+
+path /userOwned/preferences/{uid} is Preferences {
+    read() { isUser(auth, uid) }
+    write() { isUser(auth, uid) }
+}
+
+type Preferences {
+    validate() { this.excuse.length < 20 && this.respectRating < 5 }
+
+    useAutotune: Boolean,
+    excuse: String,
+    respectRating: Number
+}
