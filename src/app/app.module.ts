@@ -20,9 +20,10 @@ import { FooterComponent } from './main-section/footer';
 
 
 import { ClickOutsideDirective } from './directives';
-import { ClientComponent } from './client/client.component';
 
 import { AdminComponent, AdminHeaderComponent, AdminDashboardComponent, AdminLoginComponent, AuthService, AuthGuard, UnauthGuard } from './admin';
+import { PrivateComponent } from './private/private.component';
+import { PublicComponent } from './public/public.component';
 
 
 
@@ -39,10 +40,11 @@ import { AdminComponent, AdminHeaderComponent, AdminDashboardComponent, AdminLog
     WildcatComponent,
     WildcatsComponent,
     ClickOutsideDirective,
-    ClientComponent,
     AdminDashboardComponent,
     AdminLoginComponent,
-    AdminHeaderComponent
+    AdminHeaderComponent,
+    PrivateComponent,
+    PublicComponent
   ],
   imports: [
     BrowserModule,

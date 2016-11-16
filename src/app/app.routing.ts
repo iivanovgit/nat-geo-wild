@@ -1,5 +1,6 @@
 import { Routes, RouterModule } from '@angular/router';
-import { ClientComponent } from './client/client.component';
+import { PublicComponent } from './public/public.component';
+import { PrivateComponent } from './private/private.component';
 import { HomeComponent } from './main-section/home';
 import { WildcatComponent, WildcatsComponent } from './main-section/wildcats';
 import { AdminComponent, AuthGuard, UnauthGuard, AdminLoginComponent, AdminDashboardComponent } from './admin';
@@ -9,7 +10,7 @@ const appRoutes: Routes = [
     // { path: '', redirectTo: 'home', pathMatch: 'full' },
     {
         path: '',
-        component: ClientComponent,
+        component: PublicComponent,
         children: [
             {
                 path: '', component: HomeComponent,
@@ -32,6 +33,11 @@ const appRoutes: Routes = [
                 }
             }
         ]
+    },
+    {
+        path: 'login',
+        canActivate: [],
+        component: PrivateComponent
     },
     {
         path: 'admin',

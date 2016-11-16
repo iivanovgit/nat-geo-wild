@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-main-section',
@@ -6,13 +6,9 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
   styleUrls: ['main-section.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class MainSectionComponent implements OnInit {
+export class MainSectionComponent {
 
   @Input() menuClicked: Boolean = false;
   constructor() { }
-
-  ngOnInit() {
-
-  }
 
 }
