@@ -1,10 +1,9 @@
 import { Routes, RouterModule } from '@angular/router';
 import { PublicComponent } from './public/public.component';
-import { PrivateComponent } from './private/private.component';
 import { HomeComponent } from './main-section/home';
 import { WildcatComponent, WildcatsComponent } from './main-section/wildcats';
-import { AdminComponent, AuthGuard, UnauthGuard, AdminLoginComponent, AdminDashboardComponent } from './admin';
-
+import { AdminComponent, AdminGuard, AdminLoginComponent, AdminDashboardComponent } from './admin';
+import { PrivateComponent, LoginComponent, LoginFormComponent, DashboardComponent, AuthGuard } from './private';
 
 const appRoutes: Routes = [
     // { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -35,9 +34,28 @@ const appRoutes: Routes = [
         ]
     },
     {
-        path: 'login',
-        canActivate: [],
+        path: 'dashboard',
+        canActivate: [AuthGuard],
         component: PrivateComponent,
+        children: [
+            {
+                path: '',
+                component: DashboardComponent,
+                data: {
+                    title: 'Dashboard |'
+                }
+            }
+        ]
+    },
+    {
+        path: 'login',
+        component: LoginComponent,
+        children: [
+            {
+                path:'',
+                component: LoginFormComponent
+            }
+        ],
         data: {
             title: 'Sign in |'
         }
@@ -45,7 +63,7 @@ const appRoutes: Routes = [
     {
         path: 'admin',
         component: AdminComponent,
-        canActivate: [AuthGuard],
+        canActivate: [AdminGuard],
         children: [
             {
                 path: '',
@@ -58,8 +76,7 @@ const appRoutes: Routes = [
     },
     {
         path: 'admin-login',
-        component: AdminLoginComponent,
-        canActivate: [UnauthGuard]
+        component: AdminLoginComponent
     },
     { path: '**', redirectTo: '' }
 ];

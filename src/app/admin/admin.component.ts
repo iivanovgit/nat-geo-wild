@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from './admin-login/services/auth-service';
+import { AdminAuthService } from './admin-login/services/admin-auth-service';
 
 @Component({
   selector: 'app-admin',
@@ -12,7 +12,7 @@ import { AuthService } from './admin-login/services/auth-service';
 })
 export class AdminComponent{
 
-  constructor(private auth: AuthService) {}
+  constructor(private auth: AdminAuthService) {}
 
   signOut(): void {
     this.auth.signOut();

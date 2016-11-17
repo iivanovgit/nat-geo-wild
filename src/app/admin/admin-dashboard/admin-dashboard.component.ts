@@ -14,15 +14,9 @@ export class AdminDashboardComponent {
 
     this.af.database.list('/authentication/users/').$ref.once('value').then(
       function (snapshot) {
-        console.log('data of', snapshot.key, snapshot.hasChild('jKKQ440QhwYvQNYxVwJlL20JtLh2')); //child('')
+        console.log('data of', snapshot.key, snapshot.hasChild('jKKQ440QhwYvQNYxVwJlL20JtLh2'));
       }
     );
-
-    // this.af.database.list('/authentication/users/{{uid}}').$ref.once('value').then(
-    //   function (snapshot) {
-    //     console.log('data of', snapshot.key, snapshot.val(), ); //child('jKKQ440QhwYvQNYxVwJlL20JtLh2')
-    //   }
-    // );
   }
 
 }

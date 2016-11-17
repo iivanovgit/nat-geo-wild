@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFire } from 'angularfire2';
-import { AdminAuthService } from './services/admin-auth-service';
+import { AuthService } from './services/auth-service';
 
 @Component({
-  templateUrl: 'admin-login.component.html'
+  selector: 'app-login-form',
+  templateUrl: './login-form.component.html'
 })
-export class AdminLoginComponent {
+export class LoginFormComponent {
+
   public error: any;
 
   constructor(
     private af: AngularFire,
-    private auth: AdminAuthService,
+    private auth: AuthService,
     private router: Router) { }
 
   onSubmit(formData) {
@@ -29,11 +31,11 @@ export class AdminLoginComponent {
             }
           ).then(
             (result) => {
-              if (result) {
+              if (!result) {
                 console.log(success);
-                this.router.navigate(['/admin']);
+                this.router.navigate(['/dashboard']);
               } else {
-                 this.auth.signOut();
+                this.auth.signOut();
               }
             }
             );
@@ -41,15 +43,30 @@ export class AdminLoginComponent {
         }).catch(
         (err) => {
           console.log(err);
-          this.router.navigate(['/admin']);
+          this.router.navigate(['/dashboard']);
         });
     } else {
       this.error = 'Your form is invalid';
     }
   }
-  
+
+  signInWithGithub(): void {
+    this.auth.signInWithGithub()
+      .then(() => this.postSignIn());
+  }
+
+  signInWithGoogle(): void {
+    this.auth.signInWithGoogle()
+      .then(() => this.postSignIn());
+  }
+
+  signInWithTwitter(): void {
+    this.auth.signInWithTwitter()
+      .then(() => this.postSignIn());
+  }
+
   private postSignIn(): void {
-    this.router.navigate(['admin']);
+    this.router.navigate(['dashboard']);
   }
 
 }

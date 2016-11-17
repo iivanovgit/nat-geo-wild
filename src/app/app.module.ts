@@ -21,8 +21,8 @@ import { FooterComponent } from './main-section/footer';
 
 import { ClickOutsideDirective } from './directives';
 
-import { AdminComponent, AdminHeaderComponent, AdminDashboardComponent, AdminLoginComponent, AuthService, AuthGuard, UnauthGuard } from './admin';
-import { PrivateComponent } from './private/private.component';
+import { AdminComponent, AdminHeaderComponent, AdminDashboardComponent, AdminLoginComponent, AdminAuthService, AdminGuard } from './admin';
+import { PrivateComponent, LoginComponent, LoginFormComponent, AuthGuard, DashboardComponent, AuthService } from './private';
 import { PublicComponent } from './public/public.component';
 
 
@@ -44,7 +44,10 @@ import { PublicComponent } from './public/public.component';
     AdminLoginComponent,
     AdminHeaderComponent,
     PrivateComponent,
-    PublicComponent
+    PublicComponent,
+    LoginComponent,
+    DashboardComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,7 @@ import { PublicComponent } from './public/public.component';
     FirebaseModule,
     routing
   ],
-  providers: [FirebaseService, HomeService, WildcatsService, AuthService, AuthGuard, UnauthGuard],
+  providers: [FirebaseService, HomeService, WildcatsService, AdminAuthService, AdminGuard, AuthService, AuthGuard],
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })

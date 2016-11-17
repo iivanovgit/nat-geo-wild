@@ -10,7 +10,7 @@ import { AuthService } from '../services/auth-service';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-  constructor(private auth: AuthService, private _router: Router) {}
+  constructor(private auth: AuthService, private router: Router) {}
 
   canActivate(): Observable<boolean> {
     return this.auth.auth$
@@ -18,7 +18,7 @@ export class AuthGuard implements CanActivate {
       .map(authState => !!authState)
       .do(authenticated => {
         if (!authenticated) {
-          this._router.navigate(['admin-login']);
+          this.router.navigate(['login']);
         }
       });
   }
