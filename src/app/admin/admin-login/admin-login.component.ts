@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AngularFire } from 'angularfire2';
-import { AdminAuthService } from './services/admin-auth-service';
+import { AngularFire, FirebaseAuth } from 'angularfire2';
 
 @Component({
   templateUrl: 'admin-login.component.html'
@@ -11,7 +10,7 @@ export class AdminLoginComponent {
 
   constructor(
     private af: AngularFire,
-    private auth: AdminAuthService,
+    private auth: FirebaseAuth,
     private router: Router) { }
 
   onSubmit(formData) {
@@ -33,7 +32,7 @@ export class AdminLoginComponent {
                 console.log(success);
                 this.router.navigate(['/admin']);
               } else {
-                 this.auth.signOut();
+                 this.auth.logout();
               }
             }
             );
@@ -46,10 +45,6 @@ export class AdminLoginComponent {
     } else {
       this.error = 'Your form is invalid';
     }
-  }
-  
-  private postSignIn(): void {
-    this.router.navigate(['admin']);
   }
 
 }

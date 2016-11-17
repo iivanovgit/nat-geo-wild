@@ -21,7 +21,7 @@ import { FooterComponent } from './main-section/footer';
 
 import { ClickOutsideDirective } from './directives';
 
-import { AdminComponent, AdminHeaderComponent, AdminDashboardComponent, AdminLoginComponent, AdminAuthService, AdminGuard } from './admin';
+import { AdminComponent, AdminHeaderComponent, AdminDashboardComponent, AdminLoginComponent, AdminGuard } from './admin';
 import { PrivateComponent, LoginComponent, LoginFormComponent, AuthGuard, DashboardComponent, AuthService } from './private';
 import { PublicComponent } from './public/public.component';
 
@@ -56,7 +56,7 @@ import { PublicComponent } from './public/public.component';
     FirebaseModule,
     routing
   ],
-  providers: [FirebaseService, HomeService, WildcatsService, AdminAuthService, AdminGuard, AuthService, AuthGuard],
+  providers: [FirebaseService, HomeService, WildcatsService, AdminGuard, AuthService, AuthGuard],
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })

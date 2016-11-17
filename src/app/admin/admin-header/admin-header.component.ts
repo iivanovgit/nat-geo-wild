@@ -6,11 +6,11 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
   selector: 'admin-header',
   template: `
     <header>
-          <h1>Admin Panel</h1>
+          <h1>Panel</h1>
     
           <ul>
-            <li *ngIf="authenticated">
-              <a href="#" (click)="signOut.emit()">Sign out</a>
+            <li>
+              <a href="" (click)="signOut.emit()">Sign out</a>
             </li>
             
           </ul>

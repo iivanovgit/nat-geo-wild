@@ -1,20 +1,20 @@
 import { Component } from '@angular/core';
-import { AdminAuthService } from './admin-login/services/admin-auth-service';
+import { FirebaseAuth,FirebaseAuthState } from 'angularfire2';
 
 @Component({
   selector: 'app-admin',
   template: `
   <admin-header
-      [authenticated]="auth.authenticated"
+      [authenticated]=""
       (signOut)="signOut()"></admin-header>
   <router-outlet></router-outlet>
   `
 })
-export class AdminComponent{
-
-  constructor(private auth: AdminAuthService) {}
+export class AdminComponent {
+  constructor(public auth: FirebaseAuth) {
+  }
 
   signOut(): void {
-    this.auth.signOut();
+    this.auth.logout();
   }
 }
