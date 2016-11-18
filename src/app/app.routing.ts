@@ -1,7 +1,5 @@
 import { Routes, RouterModule } from '@angular/router';
-import { PublicComponent } from './public/public.component';
-import { HomeComponent } from './main-section/home';
-import { WildcatComponent, WildcatsComponent } from './main-section/wildcats';
+import { PublicComponent, HomeComponent, WildcatComponent, WildcatsComponent } from './public';
 import { AdminComponent, AdminGuard, AdminLoginComponent, AdminDashboardComponent } from './admin';
 import { PrivateComponent, LoginComponent, LoginFormComponent, DashboardComponent, AuthGuard } from './private';
 

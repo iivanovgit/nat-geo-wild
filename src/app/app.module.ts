@@ -8,25 +8,11 @@ import { routing } from './app.routing';
 
 import { FirebaseModule, FirebaseService } from './firebase';
 
-import { HomeService, HomeComponent } from './main-section/home';
-import { WildcatsService, WildcatComponent, WildcatsComponent } from './main-section/wildcats';
-
-
-import { SideMenuComponent } from './side-menu';
-import { MainSectionComponent } from './main-section';
-import { HeaderComponent } from './main-section/header';
-import { FooterComponent } from './main-section/footer';
-
-
-
-import { ClickOutsideDirective } from './directives';
-
 import { AdminComponent, AdminHeaderComponent, AdminDashboardComponent, AdminLoginComponent, AdminGuard } from './admin';
 import { PrivateComponent, LoginComponent, LoginFormComponent, AuthGuard, DashboardComponent, AuthService } from './private';
-import { PublicComponent } from './public/public.component';
+import { SideMenuComponent, HeaderComponent, FooterComponent, MainSectionComponent, HomeService, HomeComponent, PublicComponent, WildcatsService, WildcatComponent, WildcatsComponent, ClickOutsideDirective } from './public';
 
-
-
+// const mapValuesToArray = (obj) => Object.keys(obj).map(key => obj[key]);
 
 @NgModule({
   declarations: [
