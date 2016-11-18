@@ -1,7 +1,7 @@
 <section>
     <md-grid-list cols="1" rowHeight="400px">
         <md-grid-tile>
-            <div>
+            <div class="wrapper">
                 <h2>Sign in</h2>
 
                 <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
@@ -15,8 +15,10 @@
                         <button type="submit" md-raised-button color="accent" [disabled]="!formData.valid">Submit</button>
                     </div>
                 </form>
-                <div class="sign-in">
+                <div>
                     <h1 class="sign-in__heading">Sign with</h1>
+                </div>
+                <div>
                     <button class="sign-in__button" md-raised-button (click)="signInWithGithub()" type="button">GitHub</button>
                     <button class="sign-in__button" md-raised-button (click)="signInWithGoogle()" type="button">Google</button>
                     <button class="sign-in__button" md-raised-button (click)="signInWithTwitter()" type="button">Twitter</button>

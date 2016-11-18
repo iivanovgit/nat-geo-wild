@@ -7,10 +7,12 @@ section{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#262626', endColorstr='#4b4b4b',GradientType=1 ); 
     color: #fff;
     }
-.wrapper{
-    padding-top:120px;
-}
 
 section div{
     padding-top: 20px;
 }
+
+.wrapper{
+    padding-top:120px !important;
+}
+
