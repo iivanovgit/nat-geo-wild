@@ -3,7 +3,8 @@ import { Router } from '@angular/router';
 import { AngularFire, FirebaseAuth } from 'angularfire2';
 
 @Component({
-  templateUrl: 'admin-login.component.html'
+  templateUrl: 'admin-login.component.html',
+  styleUrls: ['admin-login.component.css']
 })
 export class AdminLoginComponent {
   public error: any;

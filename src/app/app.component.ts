@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import 'rxjs/Rx';
@@ -7,13 +7,13 @@ import { Subscription } from 'rxjs/Subscription';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 
 export class AppComponent {
 
   sub: Subscription;
-
 
   constructor(private titleService: Title, private router: Router) {
     this.sub = this.router.events
@@ -26,6 +26,7 @@ export class AppComponent {
       .flatMap(route => route.data)
       .subscribe(data => {
         this.titleService.setTitle((data['title'] + ' ' + 'Nat Geo Wild') || 'Nat Geo Wild');
+        console.log(this.titleService.getTitle());
       });
   }
 

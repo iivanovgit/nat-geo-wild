@@ -1,40 +1,27 @@
-<br><br><br><br>
-<div class="row">
-    <div class="small-12 medium-8 medium-centered large-6 large-centered columns">
-        <div class="callout alert" *ngIf="error">
-            {{ error }}
-        </div>
-        <h2>Login</h2>
-        <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
-            <div class="row">
-                <div class="small-12 columns">
-                    <label> Enter email address
-                        <input type="email" name="email" placeholder="e.g email@address.com" (ngModel)="email" requred>
-                    </label>
-                </div>
-                <div class="small-12 columns">
-                    <label> Password
-                        <input type="password" name="password" (ngModel)="password" required>
-                    </label>
-                </div>
-                <div class="small-12 columns">
-                    <button type="submit" class="button" [disabled]="!formData.valid">Submit</button>
-                    <br/>
-                    <!--<a routerLink="/signup">Don't have an account?</a> &bull; <a routerLink="/password-reset">Forgotten password?</a>-->
+<section>
+    <md-grid-list cols="1" rowHeight="400px">
+        <md-grid-tile>
+            <div>
+                <h2>Sign in</h2>
+
+                <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+                    <div>
+                        <md-input type="email" name="email" placeholder="e.g email@address.com" (ngModel)="email" requred>
+                        </md-input>
+                        <md-input type="password" name="password" placeholder="password" (ngModel)="password" requred>
+                        </md-input>
+                    </div>
+                    <div>
+                        <button type="submit" md-raised-button color="accent" [disabled]="!formData.valid">Submit</button>
+                    </div>
+                </form>
+                <div class="sign-in">
+                    <h1 class="sign-in__heading">Sign with</h1>
+                    <button class="sign-in__button" md-raised-button (click)="signInWithGithub()" type="button">GitHub</button>
+                    <button class="sign-in__button" md-raised-button (click)="signInWithGoogle()" type="button">Google</button>
+                    <button class="sign-in__button" md-raised-button (click)="signInWithTwitter()" type="button">Twitter</button>
                 </div>
             </div>
-        </form>
-    </div>
-</div>
-
-
-
-<div class="g-row sign-in">
-    <div class="g-col">
-        <h1 class="sign-in__heading">Sign in</h1>
-        <button class="sign-in__button" (click)="signInWithGithub()" type="button">GitHub</button>
-        <button class="sign-in__button" (click)="signInWithGoogle()" type="button">Google</button>
-        <button class="sign-in__button" (click)="signInWithTwitter()" type="button">Twitter</button>
-    </div>
-</div>
-<br><br><br><br>
+        </md-grid-tile>
+    </md-grid-list>
+</section>
