@@ -1,7 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 import { PublicComponent, HomeComponent, WildcatComponent, WildcatsComponent } from './public';
 import { AdminComponent, AdminGuard, AdminLoginComponent, AdminDashboardComponent } from './admin';
-import { PrivateComponent, LoginComponent, LoginFormComponent, DashboardComponent, AuthGuard } from './private';
+import { PrivateComponent, LoginWrapperComponent, LoginComponent, DashboardComponent, AuthGuard } from './private';
 
 const appRoutes: Routes = [
     // { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -47,11 +47,11 @@ const appRoutes: Routes = [
     },
     {
         path: 'login',
-        component: LoginComponent,
+        component: LoginWrapperComponent,
         children: [
             {
                 path:'',
-                component: LoginFormComponent
+                component: LoginComponent
             }
         ],
         data: {

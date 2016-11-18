@@ -10,7 +10,7 @@ import { routing } from './app.routing';
 import { FirebaseModule, FirebaseService } from './firebase';
 
 import { AdminComponent, AdminHeaderComponent, AdminDashboardComponent, AdminLoginComponent, AdminGuard } from './admin';
-import { PrivateComponent, LoginComponent, LoginFormComponent, AuthGuard, DashboardComponent, AuthService } from './private';
+import { PrivateComponent, LoginWrapperComponent, LoginComponent, AuthGuard, DashboardComponent, AuthService } from './private';
 import { SideMenuComponent, HeaderComponent, FooterComponent, MainSectionComponent, HomeService, HomeComponent, PublicComponent, WildcatsService, WildcatComponent, WildcatsComponent, ClickOutsideDirective } from './public';
 
 // const mapValuesToArray = (obj) => Object.keys(obj).map(key => obj[key]);
@@ -32,9 +32,9 @@ import { SideMenuComponent, HeaderComponent, FooterComponent, MainSectionCompone
     AdminHeaderComponent,
     PrivateComponent,
     PublicComponent,
-    LoginComponent,
+    LoginWrapperComponent,
     DashboardComponent,
-    LoginFormComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
