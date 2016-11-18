@@ -24,20 +24,15 @@
   <ul class="bottom-links">
     <li class="search-menu">
       <div class="search-button" (click)="toggleSearch()">
-        <i class="fa fa-search" *ngIf="!search"></i>
-        <i class="fa fa-close" *ngIf="search"></i>
+        <md-icon *ngIf="!search">search</md-icon>
+        <md-icon *ngIf="search">close</md-icon>
       </div>
       <div class="search-box mat-design" [class.open]="search">
-        <div class="group">
-          <input type="text" required>
-          <span class="highlight"></span>
-          <span class="bar"></span>
-          <label>Search</label>
-        </div>
+        <md-input #nameInput placeholder="Search"></md-input>
       </div>
     </li>
-    <li><a href="" class="facebook-button"><i class="fa fa-facebook"></i></a></li>
-    <li><a href="" class="twitter-button"><i class="fa fa-twitter"></i></a></li>
+    <li><a href="" class="facebook-button"><md-icon svgSrc="assets/icons/facebook.svg"></md-icon></a></li>
+    <li><a href="" class="twitter-button"><md-icon svgSrc="assets/icons/twitter.svg"></md-icon></a></li>
   </ul>
 </div>
 <div id="sidebox" class="sidebar-menu" [class.open]="menuOpen" (click)="closeSideMenu()">

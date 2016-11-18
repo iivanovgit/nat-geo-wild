@@ -74,7 +74,10 @@ const appRoutes: Routes = [
     },
     {
         path: 'admin-login',
-        component: AdminLoginComponent
+        component: AdminLoginComponent,
+        data: {
+            title: 'Admin |'
+        }
     },
     { path: '**', redirectTo: '' }
 ];

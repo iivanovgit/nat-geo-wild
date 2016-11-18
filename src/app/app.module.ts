@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MaterialModule } from '@angular/material';
 import { AppComponent } from './app.component';
 
 import { routing } from './app.routing';
@@ -40,7 +41,8 @@ import { SideMenuComponent, HeaderComponent, FooterComponent, MainSectionCompone
     CommonModule,
     FormsModule,
     FirebaseModule,
-    routing
+    routing,
+    MaterialModule.forRoot()
   ],
   providers: [FirebaseService, HomeService, WildcatsService, AdminGuard, AuthService, AuthGuard],
   entryComponents: [AppComponent],
