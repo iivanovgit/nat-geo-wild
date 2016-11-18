@@ -11,11 +11,11 @@ export class AdminDashboardComponent {
   constructor(private af: AngularFire) {
     this.simpleText = this.af.database.list('authentication/users/');
 
-    this.af.database.list('/authentication/users/').$ref.once('value').then(
-      function (snapshot) {
-        console.log('data of', snapshot.key, snapshot.hasChild('jKKQ440QhwYvQNYxVwJlL20JtLh2'));
-      }
-    );
+    // this.af.database.list('/authentication/users/').$ref.once('value').then(
+    //   function (snapshot) {
+    //     console.log('data of', snapshot.key, snapshot.hasChild('jKKQ440QhwYvQNYxVwJlL20JtLh2'));
+    //   }
+    // );
   }
 
 }

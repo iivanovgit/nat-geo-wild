@@ -9,7 +9,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
           <h1>Panel</h1>
     
           <ul>
-            <li>
+            <li *ngIf="authenticated">
               <a href="" (click)="signOut.emit()">Sign out</a>
             </li>
             
