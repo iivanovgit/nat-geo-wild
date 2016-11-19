@@ -7,24 +7,39 @@
                 "isAdmin": true
             },
             "MdnPZu7JHofjJw6Lbwar5f7x7Fg2": {
-                "name": "admin",
-                "email": "admin@admin.com"
+                "name": "admin account",
+                "email": "admin@admin.com",
+                "isAdmin": true
+            },
+            "EHtA3W4byZf58BAr4JGGQJpmwjo1": {
+                "name": "test account",
+                "email": "test.test.com"
             }
         },
         "userReadable": {},
         "userWriteable": {},
         "userOwned": {
-            "preference": {
-                "jKKQ440QhwYvQNYxVwJlL20JtLh2": {
-                    "loveKanye": true
-                },
-                "MdnPZu7JHofjJw6Lbwar5f7x7Fg2": {
-                    "listenToHaters": false
+            "books": {
+                "EHtA3W4byZf58BAr4JGGQJpmwjo1": {
+                    "001": {
+                        "name": "my 1st book",
+                        "status": false
+                    },
+                    "002": {
+                        "name": "my 2nd book",
+                        "status": false
+                    }
+                }
+            },
+            "credits": {
+                "EHtA3W4byZf58BAr4JGGQJpmwjo1": {
+                    "amount": 2
                 }
             }
         }
     },
-    "client-side": {
+    "books": {},
+    "public": {
         "home": {
             "slides": [
                 null,

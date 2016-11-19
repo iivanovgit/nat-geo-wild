@@ -11,6 +11,6 @@ export class FirebaseService {
     }
 
     getHomeSlides() {
-        return this.homeSlides = this.af.database.list('client-side/home/slides');
+        return this.homeSlides = this.af.database.list('public/home/slides');
     }
 }
