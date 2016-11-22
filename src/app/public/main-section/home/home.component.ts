@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
-import { Slide, HomeService } from './home.service';
+import { FirebaseService } from '../../../firebase';
+import { Slide } from './home.service';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 
   constructor(
-    private service: HomeService,
+    private fs: FirebaseService,
     private route: ActivatedRoute) {
   }
 
@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.sub = this.route
       .params
       .subscribe(() => {
-        this.service.getSlides()
+        this.fs.getHomeSlides()
           .subscribe(slides => {
             this.slides = slides;
           });

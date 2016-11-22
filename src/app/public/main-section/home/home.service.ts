@@ -12,10 +12,7 @@ export class Slide {
 export class HomeService {
 
 
-  constructor(private fs: FirebaseService) {
+  constructor() {
   }
 
-  getSlides() {
-    return this.fs.getHomeSlides();
-  }
 }

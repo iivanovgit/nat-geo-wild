@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
 import { AppComponent } from './app.component';
 
@@ -9,9 +9,11 @@ import { routing } from './app.routing';
 
 import { FirebaseModule, FirebaseService } from './firebase';
 
-import { AdminComponent, AdminHeaderComponent, AdminDashboardComponent, AdminLoginComponent, AdminGuard } from './admin';
+import { AdminComponent, AdminHeaderComponent, AdminDashboardComponent, AdminLoginComponent, AdminGuard, AdminDataService } from './admin';
 import { PrivateComponent, LoginWrapperComponent, LoginComponent, AuthGuard, DashboardComponent, AuthService } from './private';
-import { SideMenuComponent, HeaderComponent, FooterComponent, MainSectionComponent, HomeService, HomeComponent, PublicComponent, WildcatsService, WildcatComponent, WildcatsComponent, ClickOutsideDirective } from './public';
+import { SideMenuComponent, HeaderComponent, FooterComponent, MainSectionComponent, HomeService, HomeComponent, PublicComponent, WildcatsService, WildcatComponent, WildcatsComponent, ClickOutsideDirective, AutosizeDirective } from './public';
+import { NavComponent } from './private/nav/nav.component';
+
 
 // const mapValuesToArray = (obj) => Object.keys(obj).map(key => obj[key]);
 
@@ -26,7 +28,6 @@ import { SideMenuComponent, HeaderComponent, FooterComponent, MainSectionCompone
     HomeComponent,
     WildcatComponent,
     WildcatsComponent,
-    ClickOutsideDirective,
     AdminDashboardComponent,
     AdminLoginComponent,
     AdminHeaderComponent,
@@ -34,17 +35,21 @@ import { SideMenuComponent, HeaderComponent, FooterComponent, MainSectionCompone
     PublicComponent,
     LoginWrapperComponent,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    NavComponent,
+    ClickOutsideDirective,
+    AutosizeDirective,
   ],
   imports: [
     BrowserModule,
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     FirebaseModule,
     routing,
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
   ],
-  providers: [FirebaseService, HomeService, WildcatsService, AdminGuard, AuthService, AuthGuard],
+  providers: [FirebaseService, HomeService, WildcatsService, AdminGuard, AdminDataService, AuthService, AuthGuard],
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })

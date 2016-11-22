@@ -1,0 +1,84 @@
+textarea {
+    background: rgba(0, 0, 0, 0);
+    border-bottom-color: rgb(158, 158, 158);
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-image-outset: 0px;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    border-left-color: rgba(0, 0, 0, 0.870588);
+    border-left-style: none;
+    border-left-width: 0px;
+    border-right-color: rgba(0, 0, 0, 0.870588);
+    border-right-style: none;
+    border-right-width: 0px;
+    border-top-color: rgba(0, 0, 0, 0.870588);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-top-style: none;
+    border-top-width: 0px;
+    box-shadow: none;
+    box-sizing: content-box;
+    color: rgba(0, 0, 0, 0.870588);
+    cursor: auto;
+    display: block;
+    flex-direction: column;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-stretch: normal;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    font-weight: normal;
+    height: 42px;
+    letter-spacing: normal;
+    line-height: 21px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    min-height: 42px;
+    outline-color: rgba(0, 0, 0, 0.870588);
+    outline-style: none;
+    outline-width: 0px;
+    overflow-x: auto;
+    overflow-y: visible;
+    padding-bottom: 22.4px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 11.2px;
+    resize: none;
+    text-align: start;
+    text-indent: 0px;
+    text-rendering: auto;
+    text-shadow: none;
+    text-size-adjust: 100%;
+    text-transform: none;
+    transition-delay: 0s;
+    transition-duration: 0.3s;
+    transition-property: all;
+    transition-timing-function: ease;
+    user-select: text;
+    white-space: pre-wrap;
+    width: 100%;
+    word-spacing: 0px;
+    word-wrap: break-word;
+    writing-mode: horizontal-tb;
+    -webkit-appearance: none;
+    -webkit-rtl-ordering: logical;
+    -webkit-border-image: none;
+}
+
+md-card{
+    margin-top: 20px;
+}
+
+form section{
+    margin-top: 10px;
+    display: block;
+}

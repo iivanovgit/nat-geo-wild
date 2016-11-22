@@ -16,3 +16,7 @@ section div{
     padding-top:120px !important;
 }
 
+
+md-input{
+    width: 100%;
+}

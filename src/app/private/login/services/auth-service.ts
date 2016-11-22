@@ -7,8 +7,8 @@ export class AuthService {
   private authState: FirebaseAuthState = null;
 
 
-  constructor(public auth$: FirebaseAuth) {
-    auth$.subscribe((state: FirebaseAuthState) => {
+  constructor(public auth: FirebaseAuth) {
+    auth.subscribe((state: FirebaseAuthState) => {
       this.authState = state;
     });
   }
@@ -21,8 +21,12 @@ export class AuthService {
     return this.authenticated ? this.authState.uid : '';
   }
 
+  get token(): firebase.Promise<FirebaseAuthState> {
+    return this.authState.auth.getToken();
+  }
+
   signIn(provider: number, method): firebase.Promise<FirebaseAuthState> {
-    return this.auth$.login({ provider, method })
+    return this.auth.login({ provider, method })
       .catch(error => console.log('ERROR @ AuthService#signIn() :', error));
   }
 
@@ -39,6 +43,6 @@ export class AuthService {
   }
 
   signOut(): void {
-    this.auth$.logout();
+    this.auth.logout();
   }
 }

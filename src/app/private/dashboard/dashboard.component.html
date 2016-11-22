@@ -1,4 +1,50 @@
-<p>
-  dashboard works!
-  <a href="" (click)="signOut()">sign out</a>
-</p>
+<app-nav></app-nav>
+<div class="content">
+  <h1>Dashboard</h1>
+  <hr>
+
+  <md-card>
+    <form [formGroup]="bookDataForm">
+      <input formControlName="title" [(ngModel)]="latestBookTitle" placeholder="title">
+    </form>
+
+
+    <p *ngIf="!!latestBookTitle">Book title <strong>{{latestBookTitle}}</strong></p>
+  </md-card>
+
+  <hr>
+
+  <md-card>
+    <md-card-title>
+      Create a new Book
+    </md-card-title>
+    <form [formGroup]="newBookForm">
+
+      <input formControlName="title" placeholder="Book Title">
+
+      <select formControlName="gender">
+        <option>son</option>
+        <option>daughter</option>
+      </select>
+      <select formControlName="type">
+        <option>son</option>
+        <option>daughter</option>
+        <option>stepson</option>
+        <option>stepdaughter</option>
+      </select>
+
+      <md-card-actions align="end">
+        <button md-button (click)="fs.setNewBook(auth.id, newBookForm.value); newBookForm.reset()">SUBMIT</button>
+      </md-card-actions>
+    </form>
+  </md-card>
+  <md-card>
+    <p>newBookForm: {{ newBookForm.value | json }}</p>
+    <!--<p>Form status: {{ bookFrom.status }}</p>-->
+  </md-card>
+
+  <hr>
+
+
+
+</div>

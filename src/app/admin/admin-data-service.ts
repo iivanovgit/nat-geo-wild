@@ -4,7 +4,7 @@ import { AngularFire, FirebaseObjectObservable, FirebaseListObservable } from 'a
 
 
 @Injectable()
-export class FirebaseService {
+export class AdminDataService {
     // private homeSlides: FirebaseListObservable<any>;
 
     constructor(private af: AngularFire) {
@@ -14,8 +14,24 @@ export class FirebaseService {
         return this.af.database.list('public/home/slides/');
     }
 
-    getUserData(uid) {
+    getUser(uid) {
         return this.af.database.object('authentication/users/' + uid);
+    }
+
+    getUsers() {
+        return this.af.database.list('authentication/users/', {
+            query : {
+                orderByChild: 'isAdmin'
+            }
+        });
+    }
+
+    getLatestUsers(){
+        return this.af.database.list('authentication/users/', {
+            query : {
+               limitToLast: 2,
+            }
+        });
     }
 
     getLatestBook(uid) {
@@ -40,5 +56,9 @@ export class FirebaseService {
 
     setNewBook(uid, data) {
         this.af.database.list('books/' + uid).push(data)//.then((item) => { console.log(item.key) })
+    }
+
+    setWildCat(data){
+        this.af.database.list('public/wildcats/').push(data);
     }
 }

@@ -1,5 +1,66 @@
-<h1>Dashboard</h1>
-<h3> </h3>
-<ul *ngFor="let item of simpleText | async">
-    <li>{{item | json}}</li>
-</ul>
+<md-tab-group>
+    <md-tab>
+        <template md-tab-label>
+            users
+        </template>
+        <div class="content">
+            <h1>Users</h1>
+            <ul *ngFor="let user of users">
+                <li>{{user | json}}</li>
+            </ul>
+        </div>
+    </md-tab>
+    <md-tab>
+        <template md-tab-label>
+            pages
+        </template>
+        <div class="content">
+            <h1>Pages</h1>
+            <md-card>
+                <md-card-title>
+                    New Wildcat
+                </md-card-title>
+                <form [formGroup]="wildcatForm">
+                    <md-card>
+                        <md-input formControlName="title" placeholder="Wildcat Title"></md-input>
+                    </md-card>
+                    <md-card>
+                        <label for="">Summary</label>
+                        <textarea formControlName="summary" autosize placeholder="Write a summary"></textarea>
+                    </md-card>
+                    <md-card>
+                        <label for="">Description</label>
+                        <textarea formControlName="description" autosize placeholder="Write a description"></textarea>
+                    </md-card>
+                    <section>
+                        <select formControlName="status">
+                            <option value="endangered">endangered</option>
+                            <option value="safe">safe</option>
+                        </select>
+                    </section>
+                    <section>
+                        <md-input formControlName="population" placeholder="Population"></md-input>
+                        <md-input formControlName="habitat" placeholder="Habitat"></md-input>
+                    </section>
+
+
+                    <md-card-actions align="">
+                        <button md-raised-button color="primary" (click)="ads.setWildCat(wildcatForm.value); wildcatForm.reset()">Save</button>
+                    </md-card-actions>
+                </form>
+            </md-card>
+            <md-card>
+                <p>wildcatForm: {{ wildcatForm.value | json }}</p>
+                <!--<p>Form status: {{ bookFrom.status }}</p>-->
+            </md-card>
+        </div>
+    </md-tab>
+</md-tab-group>
+<div class="content">
+    <md-card>
+        <md-card-title>Latest Users</md-card-title>
+        <ul *ngFor="let user of latestUsers">
+            <li>{{user | json}}</li>
+        </ul>
+    </md-card>
+</div>

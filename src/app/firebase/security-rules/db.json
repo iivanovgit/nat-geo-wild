@@ -22,11 +22,11 @@
             "books": {
                 "EHtA3W4byZf58BAr4JGGQJpmwjo1": {
                     "001": {
-                        "name": "my 1st book",
+                        "title": "my 1st book",
                         "status": false
                     },
                     "002": {
-                        "name": "my 2nd book",
+                        "title": "my 2nd book",
                         "status": false
                     }
                 }
@@ -38,7 +38,99 @@
             }
         }
     },
-    "books": {},
+    "books": {
+        "EHtA3W4byZf58BAr4JGGQJpmwjo1": {
+            "b1": {
+                "info": {
+                    "title": "my 1st book",
+                    "type": "son",
+                    "status": "1"
+                },
+                "chapters": [
+                    {
+                        "id": "001",
+                        "title": "chapter 1 title",
+                        "content": "chapter 1 content"
+                    },
+                    {
+                        "id": "002",
+                        "title": "chapter 2 title",
+                        "content": "chapter 3 content"
+                    },
+                    {
+                        "id": "003",
+                        "title": "chapter 3 title",
+                        "content": "chapter 3 content"
+                    },
+                    {
+                        "id": "004",
+                        "title": "chapter 3 title",
+                        "content": "chapter 3 content"
+                    }
+                ]
+            },
+            "b2": {
+                "info": {
+                    "title": "my 1st book",
+                    "type": "son",
+                    "status": "1"
+                },
+                "chapters": [
+                    {
+                        "id": "001",
+                        "title": "chapter 1 title",
+                        "content": "chapter 1 content"
+                    },
+                    {
+                        "id": "002",
+                        "title": "chapter 2 title",
+                        "content": "chapter 3 content"
+                    },
+                    {
+                        "id": "003",
+                        "title": "chapter 3 title",
+                        "content": "chapter 3 content"
+                    },
+                    {
+                        "id": "004",
+                        "title": "chapter 3 title",
+                        "content": "chapter 3 content"
+                    }
+                ]
+            }
+        },
+        "AoF3nviHQhhdhfxp6X6Ifhh3xjo1": {
+            "b3": {
+                "info": {
+                    "title": "my 1st book",
+                    "type": "son",
+                    "status": "1"
+                },
+                "chapters": [
+                    {
+                        "id": "001",
+                        "title": "chapter 1 title",
+                        "content": "chapter 1 content"
+                    },
+                    {
+                        "id": "002",
+                        "title": "chapter 2 title",
+                        "content": "chapter 3 content"
+                    },
+                    {
+                        "id": "003",
+                        "title": "chapter 3 title",
+                        "content": "chapter 3 content"
+                    },
+                    {
+                        "id": "004",
+                        "title": "chapter 3 title",
+                        "content": "chapter 3 content"
+                    }
+                ]
+            }
+        }
+    },
     "public": {
         "home": {
             "slides": [

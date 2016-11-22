@@ -1,28 +1,30 @@
 <section>
-    <md-grid-list cols="1" rowHeight="400px">
+    <md-grid-list cols="1" rowHeight="500px">
         <md-grid-tile>
             <div class="wrapper">
-                <h2>Sign in</h2>
+                <md-card>
+                    <h2>Sign in</h2>
 
-                <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+                    <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+                        <div>
+                            <md-input type="email" class="full-wdith" name="email" placeholder="e.g email@address.com" (ngModel)="email" requred>
+                            </md-input>
+                            <md-input type="password" class="full-wdith" name="password" placeholder="password" (ngModel)="password" requred>
+                            </md-input>
+                        </div>
+                        <div>
+                            <button type="submit" md-raised-button color="accent" [disabled]="!formData.valid">Submit</button>
+                        </div>
+                    </form>
                     <div>
-                        <md-input type="email" name="email" placeholder="e.g email@address.com" (ngModel)="email" requred>
-                        </md-input>
-                        <md-input type="password" name="password" placeholder="password" (ngModel)="password" requred>
-                        </md-input>
+                        <h1 class="sign-in__heading">Sign with</h1>
                     </div>
                     <div>
-                        <button type="submit" md-raised-button color="accent" [disabled]="!formData.valid">Submit</button>
+                        <button class="sign-in__button" class="full-wdith" md-button (click)="signInWithGithub()" type="button">GitHub</button>
+                        <button class="sign-in__button" class="full-wdith" md-button (click)="signInWithGoogle()" type="button">Google</button>
+                        <button class="sign-in__button" class="full-wdith" md-button (click)="signInWithTwitter()" type="button">Twitter</button>
                     </div>
-                </form>
-                <div>
-                    <h1 class="sign-in__heading">Sign with</h1>
-                </div>
-                <div>
-                    <button class="sign-in__button" md-raised-button (click)="signInWithGithub()" type="button">GitHub</button>
-                    <button class="sign-in__button" md-raised-button (click)="signInWithGoogle()" type="button">Google</button>
-                    <button class="sign-in__button" md-raised-button (click)="signInWithTwitter()" type="button">Twitter</button>
-                </div>
+                </md-card>
             </div>
         </md-grid-tile>
     </md-grid-list>

@@ -1,0 +1,10 @@
+<md-toolbar color="primary">
+  <span>Application Title</span>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="fill-remaining-space"></span>
+  
+  <small><span class="username">{{userName}}</span> {{getUid}}</small>
+  
+  <a href="#" md-button (click)="auth.signOut()">Sign out</a>
+</md-toolbar>

@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,600');
+@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
 
 *{
   margin: 0px;
@@ -8,7 +9,7 @@
 body {
       margin:0px;
       font-family: 'Open Sans', sans-serif;
-      padding-left: 60px;
+      /*padding-left: 60px;*/
       overflow-x: hidden;
       color: #000;
       background: #fff;
@@ -38,6 +39,8 @@ body {
     background: #ffffff;
   }
 
-  
+  md-card-actions{
+    margin: 0px !important;
+  }
 
 
