@@ -35,7 +35,7 @@ export class AdminDashboardComponent {
       habitat: ''
     });
     this.wildcatForm.patchValue({
-      status: 'endangered'
+      status: 'inactive'
     });
   }
 }
