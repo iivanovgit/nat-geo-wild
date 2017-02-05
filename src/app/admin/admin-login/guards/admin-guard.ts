@@ -5,12 +5,14 @@ import 'rxjs/add/operator/take';
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { FirebaseAuth } from 'angularfire2';
+import { AngularFireAuth } from 'angularfire2';
 
 
 @Injectable()
 export class AdminGuard implements CanActivate {
-  constructor(private auth: FirebaseAuth, private router: Router) {}
+  constructor(
+    private auth: AngularFireAuth,
+    private router: Router) { }
 
   canActivate(): Observable<boolean> {
     return this.auth

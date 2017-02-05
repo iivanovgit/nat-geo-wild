@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FirebaseAuth, FirebaseAuthState } from 'angularfire2';
+import { AngularFireAuth, FirebaseAuthState } from 'angularfire2';
 
 @Component({
   selector: 'app-admin',
@@ -13,7 +13,7 @@ import { FirebaseAuth, FirebaseAuthState } from 'angularfire2';
 export class AdminComponent {
   private authState: FirebaseAuthState = null;
 
-  constructor(public auth: FirebaseAuth) {
+  constructor(public auth: AngularFireAuth) {
     auth.subscribe((state: FirebaseAuthState) => {
       this.authState = state;
       console.log(state);

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AngularFire, FirebaseAuth } from 'angularfire2';
+import { AngularFire, AngularFireAuth } from 'angularfire2';
 
 @Component({
   templateUrl: 'admin-login.component.html',
@@ -11,7 +11,7 @@ export class AdminLoginComponent {
 
   constructor(
     private af: AngularFire,
-    private auth: FirebaseAuth,
+    private auth: AngularFireAuth,
     private router: Router) { }
 
   onSubmit(formData) {
